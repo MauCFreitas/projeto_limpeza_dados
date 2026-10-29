@@ -5,10 +5,10 @@ O objetivo deste projeto consiste em gerar, e trabalhar dados sujos, gerados ale
 ### Ferramentas
 
 As ferramentas usadas serão:   
-    - Microsoft Copilot: para a geração das tabelas aleatórias;
-    - Python: para o tratamento dos dados e automatização do serviço; 
-    - PostgreSQL: para registrar as tabelas limpas e raceber os acessos; 
-    - Excel: para criação de dashboards e apresentações sobre o projeto.
+    - Microsoft Copilot: para a geração das tabelas aleatórias;  
+    - Python: para o tratamento dos dados e automatização do serviço;   
+    - PostgreSQL: para registrar as tabelas limpas e raceber os acessos;  
+    - Excel: para criação de dashboards e apresentações sobre o projeto.  
 
 ### Geração dos dados
 

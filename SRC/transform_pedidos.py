@@ -16,12 +16,36 @@ print(pedidos.isna().sum())
 
 
 # para iniciar, preciso corrigir todos os valores que estão incorretos
-
-######### CORRIGINDO AS DATAS
+# as datas dos pedidos não podem preceder as datas de cadastro dos clientes, para isso, preciso fazer uma checagem
+# para isso, precisarei transformar as datas no mesmo formato que  as datas da tabela clientes
 
 pedidos["data_pedido"] = pd.to_datetime(pedidos["data_pedido"], errors="coerce")
 pedidos["data_pedido"] = pedidos["data_pedido"].dt.strftime('%d/%m/%Y')
 
+#agora, vou atualizar os valores da tabela pedidos, que estão incorretos, com os valores adequados da tabela clientes
+comparacao = pedidos.merge(
+    clientes[["id_cliente", "data_cadastro"]],
+    on="id_cliente",
+    how="left"
+)
+
+pedidos_invalidos = comparacao.loc[
+    comparacao["data_pedido"] < comparacao["data_cadastro"],
+    "id_cliente"
+] 
+
+######### VERIFICANDO SE DATA PEDIDO = DATA DE CADASTRO
+
+pedidos.loc[
+    pedidos["id_pedido"].isin(pedidos_invalidos),
+    "data_pedido"
+] = clientes["data_cadastro"]
+
+# eu pensei em cancelar todos os pedidos que apresentassem data inferior a data de cadastro, mas isto resultou em muitas datas invalidas
+# então decidi corrigir as datas dos pedidos para que ficassem equivalentes as datas dos cadastros de clientes
+
+
+######## CORRIGINDO AS DATAS
 # algumas datas ficaram nulas neste processo e precisarão ser apagadas
 
 pedidos = pedidos.dropna(
@@ -41,28 +65,16 @@ pedidos["status"] = (
     .str.strip()
 )
 
-######### VERIFICANDO SE DATA PEDIDO E DATA DE CADASTRO
+# tenho pedidos muito antigos ainda com o status de 'em transporte'. preciso diminuir esta lista.
+data_maxima = '15/11/2026'
+data_maxima = pd.to_datetime(data_maxima, format="%d/%m/%Y")
+pedidos["data_pedido"] = pd.to_datetime(pedidos["data_pedido"], format="mixed", dayfirst=True)
+condicao = pedidos["data_pedido"] < data_maxima
+sorteio = np.random.choice(['Entregue', 'Cancelado'], size=condicao.count(), p=[0.85, 0.15])
+pedidos.loc[condicao, 'status'] = sorteio
 
-# as datas dos pedidos não podem preceder as datas de cadastro dos clientes, para isso, preciso fazer uma checagem
+print(pedidos.head(150))
 
-comparacao = pedidos.merge(
-    clientes[["id_cliente", "data_cadastro"]],
-    on="id_cliente",
-    how="left"
-)
-
-pedidos_invalidos = comparacao.loc[
-    comparacao["data_pedido"] < comparacao["data_cadastro"],
-    "id_cliente"
-] 
-
-pedidos.loc[
-    pedidos["id_pedido"].isin(pedidos_invalidos),
-    "data_pedido"
-] = clientes["data_cadastro"]
-
-# eu pensei em cancelar todos os pedidos que apresentassem data inferior a data de cadastro, mas isto resultou em muitas datas invalidas
-# então decidi corrigir as datas dos pedidos para que ficassem equivalentes as datas dos cadastros de clientes
 
 # precisei corrigir os valores na coluna id_pedido (sem repetição dos valores, pois id_pedido é uma PK(replace=False))
 ids = itens["id_pedido"].unique()
@@ -72,6 +84,7 @@ pedidos["id_pedido"] = np.random.choice(ids, size=len(pedidos), replace=False)
 
 # atualizar a lista de id cliente (com repetição dos valores, pois id_cliente é uma FK(replace=True))
 pedidos["id_cliente"] = np.random.choice(clientes["id_cliente"], size=len(pedidos), replace=True)
+
 
 
 pedidos.to_csv(

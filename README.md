@@ -164,11 +164,13 @@ Então eu inicio a analise com:
 Com esta analise, pude avaliar, nos meses em que foram registrados pedidos, todo o faturamento de pedidos com status equivalente a 'Entregue'. Dessa forma, toda compra que estivesse concluída, estaria no meu calculo.
 
 Ao separar os meses e realizar os somatórios, plotei um gráfico para uma melhor compreensão:
-<img src="DASHBOARD\IMAGENS\evolução faturamento mensal.png" alt="Evolução do Faturamento Mensal" width="300">
+<img src="DASHBOARD\IMAGENS\evolução faturamento mensal.png" alt="Evolução do Faturamento Mensal" width="300">  
+
 E com isso, pude avaliar que houve sim um aumento do faturamento ao longo dos meses, principalmente após o mês de Outubro de 2024.
 
 Decidi também plotar mais um gráfico que pudesse me mostrar valores referentes ao faturamento anual:
-<img src="DASHBOARD\IMAGENS\evolução faturamento anual.png" alt="Evolução do Faturamento Anual" width="300">
+<img src="DASHBOARD\IMAGENS\evolução faturamento anual.png" alt="Evolução do Faturamento Anual" width="300">  
+
 E pude ver com mais clareza a curva crescente referente ao faturamento desta loja ao longo dos anos, de uma forma quase que exponencial.
 
 2) Estudo dos clientes da loja:
@@ -183,7 +185,7 @@ Sendo assim, avaliei e calculei a idade média, a moda e a mediana dentre client
 E com este estudo, pude notar que a média de idade dos clientes desta loja é de 45 anos, e portanto, o público alvo se enquadraria nesta faixa de idade.
 
 Agora, ao tratar da cidade, precisei compreender quais eram as cidades que apareciam de forma mais recorrente dentre os pedidos feitos. E pude plotar este gráfico, que apontava as 5 cidades mais comuns na minha lista:
-<img src="DASHBOARD\IMAGENS\5 cidades com mais clientes.png" alt="TOP 5 Cidades Compradoras" width="300">
+<img src="DASHBOARD\IMAGENS\5 cidades com mais clientes.png" alt="TOP 5 Cidades Compradoras" width="300">  
 Nesta avaliação, percebi que Salvador, Belo Horizonte, Porto Alegre, Recife e Curitiba eram as cidades que mais compravam na loja.
 
 Além destas avaliações, também precisei avaliar os clientes que faziam a recompra e os clientes que compravam apenas 1x na loja.
@@ -192,11 +194,11 @@ Além destas avaliações, também precisei avaliar os clientes que faziam a rec
 A partir deste script, pude compreender melhor quem eram os clientes fidelizados desta loja, aqueles que compravam os produtos com frequencia.
 
 Após essa avaliação, encontrei os valores:
-<img src="DASHBOARD\IMAGENS\taxa de recompra.png" alt="Taxa de Recompra/compra unitária" width="300">
+<img src="DASHBOARD\IMAGENS\taxa de recompra.png" alt="Taxa de Recompra/compra unitária" width="300">  
 E com estes dados, pude perceber que para esta loja fictícia, que os dados foram gerados aleatóriamente, a recompra era muito mais alta que o esperado, e reprensetava um valor acima de 99% das compras.
 
 Mesmo com este valor irreal, decidi seguir minha analise, para ver até onde poderia chegar, e calculei também o tempo que levava para um cliente, que ja realizou uma compra, fazer a recompra na mesma loja:
-<img src="DASHBOARD\IMAGENS\distribuição tempo de recompra.png" alt="Tempo para realizar recompra" width="300">
+<img src="DASHBOARD\IMAGENS\distribuição tempo de recompra.png" alt="Tempo para realizar recompra" width="300">  
 com a analise ralizada, pude concluir que o tempo médio para recompra dos clientes desta loja era de aproximadamente 110 dias após a compra anterior.
 
 3) Analise de quais categorias mais saem:
@@ -205,14 +207,16 @@ Aqui, o objetivo era entender quais as categorias estão mais presentes nos pedi
 [Analise de categorias](NOTEBOOK\analise exploratória\categorias.py)
 
 Sendo assim, foi necessário organizar um ranking para esta avaliação:
-<img src="DASHBOARD\IMAGENS\ranking de saída de categorias.png" alt="Ranking de saída de categorias" width="300">
+
+<img src="DASHBOARD\IMAGENS\ranking de saída de categorias.png" alt="Ranking de saída de categorias" width="300">  
 
 Pude observar que existe sim uma categoria que destoa dentre as outras é a categoria de produtos Eletrônicos, tendo uma faixa de saída equivalente a: 
-<img src="DASHBOARD\IMAGENS\porcentagem de saída de categorias.png" alt="Porcentagem de saída de categorias" width="300">
+<img src="DASHBOARD\IMAGENS\porcentagem de saída de categorias.png" alt="Porcentagem de saída de categorias" width="300">  
 
 Também foi avaliado nesta analise, a taxa de saída de cada categoria de produto por mês, separando a categoria que lidera o ranking e a categoria que fica em segundo lugar.
 
-<img src="DASHBOARD\IMAGENS\principais categorias vendidas no mes.png" alt="Principais categorias vendidas no mes" width="300">
+<img src="DASHBOARD\IMAGENS\principais categorias vendidas no mes.png" alt="Principais categorias vendidas no mes" width="300">  
+
 E com esta tabela, pude perceber que a categoria de Eletrônicos domina as vendas na maioria dos meses, e é seguido pela categoria Casa, que alcança o segundo lugar em vendas entre as categorias na maioria dos meses.
 
 4) Operação dos pedidos:

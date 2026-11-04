@@ -5,10 +5,10 @@ O objetivo deste projeto consiste em gerar, e trabalhar dados sujos, gerados ale
 ### Ferramentas
 
 As ferramentas usadas serão:   
-    - Microsoft Copilot: para a geração das tabelas aleatórias;
-    - Python: para o tratamento dos dados e automatização do serviço; 
-    - PostgreSQL: para registrar as tabelas limpas e raceber os acessos; 
-    - Excel: para criação de dashboards e apresentações sobre o projeto.
+    - Microsoft Copilot: para a geração das tabelas aleatórias;  
+    - Python: para o tratamento dos dados e automatização do serviço;   
+    - PostgreSQL: para registrar as tabelas limpas e raceber os acessos;  
+    - Excel: para criação de dashboards e apresentações sobre o projeto.  
 
 ### Geração dos dados
 
@@ -156,6 +156,8 @@ Com meus objetivos definidos, farei uma analise exploratória de dadospara compr
 
 1) Analise de crescimento da loja:
 Iniciei estas analises com a pergunta principal: "A loja está crescendo? Está obtendo mais lucros que antes?"  
+Então eu inicio a analise com:  
+[Analise exploratória](notebooks/analise_exploratoria.py)
 
 [Analise de crescimento](NOTEBOOK\analise exploratória\crescimento.py)
 

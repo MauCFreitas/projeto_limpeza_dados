@@ -15,7 +15,7 @@ As ferramentas usadas serão:
 As tabelas foram geradas a partir do seguinte script gerado pelo Microsoft Copilot:  
 
 
-[Gerador de Tabela](DATA\RAW\GERADOR DE TABELA RAW\generate_data.py)  
+[Gerador de Tabela](DATA/RAW/GERADOR%20DE%20TABELA%20RAW/generate_data.py)  
 
 A partir deste código, 4 tabelas foram geradas:  
 1- [Tabela clientes](DATA/RAW/clientes.csv) - Tabela que mostrava os registros de cadastros dos clientes desta suposta loja;  

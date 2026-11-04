@@ -157,7 +157,6 @@ Com meus objetivos definidos, farei uma analise exploratória de dadospara compr
 1) Analise de crescimento da loja:
 Iniciei estas analises com a pergunta principal: "A loja está crescendo? Está obtendo mais lucros que antes?"  
 Então eu inicio a analise com:  
-[Analise exploratória](notebooks/analise_exploratoria.py)
 
 [Analise de crescimento](NOTEBOOK/analise_exploratória/crescimento.py)
 
@@ -166,7 +165,7 @@ Com esta analise, pude avaliar, nos meses em que foram registrados pedidos, todo
 Ao separar os meses e realizar os somatórios, plotei um gráfico para uma melhor compreensão:  
 <img src="DASHBOARD\IMAGENS\evolução faturamento mensal.png" alt="Evolução do Faturamento Mensal" width="300">  
 
-E com isso, pude avaliar que houve sim um aumento do faturamento ao longo dos meses, principalmente após o mês de Outubro de 2024.
+E com isso, pude avaliar que houve sim um aumento do faturamento ao longo dos meses, principalmente após o mês de Outubro de 2024. No entanto, pode ser considerado que este aumento estabilizou ao longo dos meses seguintes.
 
 Decidi também plotar mais um gráfico que pudesse me mostrar valores referentes ao faturamento anual:  
 <img src="DASHBOARD\IMAGENS\evolução faturamento anual.png" alt="Evolução do Faturamento Anual" width="300">  
@@ -235,4 +234,3 @@ Nesta última analise, o objetivo foi encontrar um padrão entre os pedidos, par
 [Analise de pedidos](NOTEBOOK/analise_exploratória/operacao.py)
 
 A analise retornou uma média de 5 itens por pedido, com uma média de R$ 13.743,37 por pedido.
-

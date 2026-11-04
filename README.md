@@ -15,13 +15,13 @@ As ferramentas usadas serão:
 As tabelas foram geradas a partir do seguinte script gerado pelo Microsoft Copilot:  
 
 
-[Gerador de Tabela](projeto_limpeza_dados/DATA/RAW/GERADOR%20DE%20TABELAS/generate_data.py)  
+[Gerador de Tabela](DATA/RAW/GERADOR%20DE%20TABELAS/generate_data.py)  
 
 A partir deste código, 4 tabelas foram geradas:  
-1- [Tabela clientes](projeto_limpeza_dados/DATA/RAW/clientes.csv) - Tabela que mostrava os registros de cadastros dos clientes desta suposta loja;  
-2- [Tabela produtos](projeto_limpeza_dados/DATA/RAW/produtos.csv) - Tabela que represetava a disponibilidade de produtos cadastrados pela loja;  
-3- [Tabela pedidos](projeto_limpeza_dados/DATA/RAW/pedidos.csv) - Tabela que relacionada a entrega dos pedidos que foram feitos;  
-4- [Tabela pedidos](projeto_limpeza_dados/DATA/RAW/itens_pedido.csv) - Tabela que demonstrava os pedidos dos produtos cadastrados feitos pelos clientes cadastrados.  
+1- [Tabela clientes](DATA/RAW/clientes.csv) - Tabela que mostrava os registros de cadastros dos clientes desta suposta loja;  
+2- [Tabela produtos](DATA/RAW/produtos.csv) - Tabela que represetava a disponibilidade de produtos cadastrados pela loja;  
+3- [Tabela pedidos](DATA/RAW/pedidos.csv) - Tabela que relacionada a entrega dos pedidos que foram feitos;  
+4- [Tabela pedidos](DATA/RAW/itens_pedido.csv) - Tabela que demonstrava os pedidos dos produtos cadastrados feitos pelos clientes cadastrados.  
 
 ### Correção das tabelas
 
@@ -32,7 +32,7 @@ Para organizar os dados, precisei usar basicamente a bibliotecas Pandas e Numpy 
 
 Sendo assim, iniciei a organização destas informações em:  
 
-## [Tabela Clientes](projeto_limpeza_dados/SRC/transform_clientes.py)  
+## [Tabela Clientes](SRC/transform_clientes.py)  
 
 Os dados nesta tabela eram referentes aos clientes cadastrados nesta loja, e se apresentava em 7 colunas, sendo elas: id_cliente, nome, email, cidade, estado, idade, data_cadastro.
 
@@ -66,7 +66,7 @@ Com todos os erros resolvidos, só restava salvar a tabela na pasta da tabela cl
 
 ------- Fim do tratamento dos dados desta tabela. -------
 
-## [Tabela produtos](projeto_limpeza_dados/SRC/transform_produtos.py)  
+## [Tabela produtos](SRC/transform_produtos.py)  
 
 Nesta tabela, os dados cadastrados se referiam aos produtos cadastrados na loja, e estavam separados em 4 colunas: id_produto, categoria, produto, preco.
 
@@ -82,7 +82,7 @@ Como esta tabela apresentava poucas colunas, e os dados já estavam de certa for
 
 ------- Fim do tratamento dos dados desta tabela. -------
 
-## [Tabela itens](projeto_limpeza_dados/SRC/transform_itens.py)  
+## [Tabela itens](SRC/transform_itens.py)  
 
 Esta era a primeira tabela que eu precisaria trabalhar os dados em conjunto com uma outra tabela trabalhada previamente, a tabela produtos_clean.
 Nesta tabela, haviam 5 colunas: id_item, id_pedido, id_produto, quantidade, valor_unitario.
@@ -104,7 +104,7 @@ Com os dados já tratados, agora era hora de salvar a tabela em formato clean.
 
 ------- Fim do tratamento dos dados desta tabela. -------
 
-## [Tabela de pedidos](projeto_limpeza_dados/SRC/transform_pedidos.py)  
+## [Tabela de pedidos](SRC/transform_pedidos.py)  
 
 Esta tabela foi a ultima a ser tratada, pois precisaria que os dados batessem com todos os dados de todas as outras tabelas anteriores.
 Ela apresentava 4 colunas: id_pedido, id_cliente, data_pedido, status.
@@ -129,13 +129,13 @@ Com os dados já tratados, agora era hora de salvar a tabela em formato clean.
 As tabelas limpas ja estavam geradas, e agora eu precisava usar o PostgreSQL para cadastrar os dados destas tabelas.
 Para isso, usei as bibliotecas Python sqlalchemy e psychopg para reconhecer a conexão com o SQL e cadastrar as tabelas as tabelas.  
 
-[Importação das tabelas para o SQL](projeto_limpeza_dados/SRC/load_postgres.py)  
+[Importação das tabelas para o SQL](SRC/load_postgres.py)  
 
 Mas este código não fará isto de uma forma descritiva. Então será necessário apontar para ele de forma posterior quais são as chaves primárias e chaves estrangeiras, por exemplo.  
 
 Para isso, usei este comando
 
-[Configuração das tabelas SQL](projeto_limpeza_dados/SQL/config_tables.sql)
+[Configuração das tabelas SQL](SQL/config_tables.sql)
 
 Agora tenho as minhas tabelas configuradas, com as definições adequadas de PK e FK corrigidas. Além disso, também configurei os formatos dos dados de cada coluna das tabelas.  
 
@@ -155,6 +155,6 @@ Antes de criar as views das tabelas SQL, preciso organizar meus pensamentos sobr
 Com meus objetivos definidos, farei uma analise exploratória de dadospara compreender se eu alcançarei as respostas para estas perguntas.  
 
 Então eu inicio a analise com:  
-[Analise exploratória](projeto_limpeza_dados/notebooks/analise_exploratoria.py)
+[Analise exploratória](notebooks/analise_exploratoria.py)
 
 

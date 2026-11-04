@@ -159,7 +159,7 @@ Iniciei estas analises com a pergunta principal: "A loja está crescendo? Está 
 Então eu inicio a analise com:  
 [Analise exploratória](notebooks/analise_exploratoria.py)
 
-[Analise de crescimento](NOTEBOOK\analise exploratória\crescimento.py)
+[Analise de crescimento](NOTEBOOK/analise_exploratória/crescimento.py)
 
 Com esta analise, pude avaliar, nos meses em que foram registrados pedidos, todo o faturamento de pedidos com status equivalente a 'Entregue'. Dessa forma, toda compra que estivesse concluída, estaria no meu calculo.
 
@@ -176,7 +176,7 @@ E pude ver com mais clareza a curva crescente referente ao faturamento desta loj
 2) Estudo dos clientes da loja:
 Nesta analise, eu queria identificar quem é o publico que mais compra nessa loja, separando eles por: idade e região(cidade), que foram os dados cadastrados nas tabelas.
 
-[Analise dos clientes](NOTEBOOK/analise exploratória/clientes.py)
+[Analise dos clientes](NOTEBOOK/analise_exploratória/clientes.py)
 
 Foi realizado também um teste de assimetria para identificar qual o melhor valor a ser avaliado, a média ou a mediana dos valores de idade. Por apresentar um valor dentro do intervalo [-1, 1] (valor apresentado equivalente a -0,13), a média de idade se tornou um valor confiavel.
 
@@ -194,7 +194,7 @@ Nesta avaliação, percebi que Salvador, Belo Horizonte, Porto Alegre, Recife e 
 
 Além destas avaliações, também precisei avaliar os clientes que faziam a recompra e os clientes que compravam apenas 1x na loja.
 
-[Analise de recompra](NOTEBOOK/analise exploratória/recompra.py)
+[Analise de recompra](NOTEBOOK/analise_exploratória/recompra.py)
 
 A partir deste script, pude compreender melhor quem eram os clientes fidelizados desta loja, aqueles que compravam os produtos com frequencia.
 
@@ -213,7 +213,7 @@ com a analise ralizada, pude concluir que o tempo médio para recompra dos clien
 3) Analise de quais categorias mais saem:
 Aqui, o objetivo era entender quais as categorias estão mais presentes nos pedidos feitos pelos clientes.
 
-[Analise de categorias](NOTEBOOK/analise exploratória/categorias.py)
+[Analise de categorias](NOTEBOOK/analise_exploratória/categorias.py)
 
 Sendo assim, foi necessário organizar um ranking para esta avaliação:
 
@@ -232,7 +232,7 @@ E com esta tabela, pude perceber que a categoria de Eletrônicos domina as venda
 4) Operação dos pedidos:
 Nesta última analise, o objetivo foi encontrar um padrão entre os pedidos, para tentar compreender como os clientes pensam ao realizarem os pedidos. Para isso, será avaliado a quantidade média de produtos por pedido, e o valor médio dos pedidos.
 
-[Analise de pedidos](NOTEBOOK/analise exploratória/operacao.py)
+[Analise de pedidos](NOTEBOOK/analise_exploratória/operacao.py)
 
 A analise retornou uma média de 5 itens por pedido, com uma média de R$ 13.743,37 por pedido.
 

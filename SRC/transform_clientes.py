@@ -88,7 +88,8 @@ clientes["cidade"] = clientes["cidade"].replace({
     "RJ": "RIO DE JANEIRO",
     "RIO JANEIRO": "RIO DE JANEIRO",
     "S. PAULO": "SAO PAULO",
-    "SAO PAULO": "SAO PAULO"
+    "SAO PAULO": "SAO PAULO",
+    "SÃO PAULO": "SAO PAULO"
 })
 
 # para os cadastros com cidade em branco, selecionarei a moda (valor mais comum) das cidades para substituir 
@@ -142,8 +143,8 @@ print(quality_report)
 
 ######### SALVANDO A TABELA LIMPA
 
-# clientes.to_csv(
-# r"projeto_limpeza_dados\DATA\CLEAN\clientes_clean.csv",
-# index=False,
-# encoding="utf-8-sig"
-# )
+clientes.to_csv(
+r"DATA\CLEAN\clientes_clean.csv",
+index=False,
+encoding="utf-8-sig"
+)

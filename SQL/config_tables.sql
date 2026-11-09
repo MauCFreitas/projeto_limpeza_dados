@@ -1,3 +1,4 @@
+-- Active: 1792696188799@@127.0.0.1@5432@analise_vendas
 --                             tabela clientes
 --                             pk
 ALTER TABLE clientes_sql

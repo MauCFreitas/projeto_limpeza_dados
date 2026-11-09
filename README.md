@@ -234,3 +234,31 @@ Nesta última analise, o objetivo foi encontrar um padrão entre os pedidos, par
 [Analise de pedidos](NOTEBOOK/analise_exploratória/operacao.py)
 
 A analise retornou uma média de 5 itens por pedido, com uma média de R$ 13.743,37 por pedido.
+
+## Views:
+Com as analises definidas, e uma melhor compreensão dos resultados, este é o momento de iniciar a produção das views para transpassar estas informações para o Excel.
+
+#### 1) [View de Crescimento Mensal](SQL/view_crescimento_mensal.sql):  
+Nesta view, o objetivo é de relacionar as colunas de ano, mês, quantidade de pedidos entre estas colunas e o faturamento acumulado nos períodos definidos.  
+
+Desta forma, é possível avaliar como foi a produtividade de cada ano e mês, e também é possível entender como e quando se deu o crescimento das vendas.
+
+
+#### 2) [View de Estudo de Clientes](SQL/view_estudo_clientes.sql):
+Como foi feito na análise exploratória, o objetivo desta view é de separar os clientes pelas suas colunas de cidade, idade, e faturamento. Como também houve o estudo das datas de compras, e a maioria dos clientes são recorrentes, também adicionei duas tabelas com: data da primeira compra, data da última compra.
+
+Com estes dados, consigo coletar as métricas de clientes com idades variadas, que moram em cidades variadas, e fazer novas inferencias para adaptar aos planejamentos de marketing.
+
+Além disso, como tenho conhecimento do tempo médio de recompra de um cliente (110 dias), posso separar aqueles clientes que fizeram a ultima compra ha uma fração desse tempo (exemplo de 80% deste período - equivalente ha 85~90 dias), e impactar novamente com alguma nova notificação, email, ou cupom de desconto, e manter o cliente comprando.
+
+
+#### 3) [View de Categorias por Mês](SQL/view_categorias_mensal.sql):
+O objetivo desta view é de poder separar cada categoria de produtos por data, e totalizar o somatório do faturamento dentro do período, além de conseguir mensurar a quantidade de saída dos itens e avaliar a se a saída e o faturamento foram equilibrados.
+
+    
+#### 4) [View de Pedidos Completos](SQL/vew_pedidos_completos.sql):
+A tabela de itens, Se comporta com uma separação dos pedidos. Isto foi feito para que pudessemos identificar diferentes dados dentro das vendas. Sendo assim, esta view tem o objetivo de agrupar a tabela através dos pedidos realizados, e demonstrar como as compras foram executadas dentro do sistema.
+
+Com estas informações, conseguimos saber quantos itens diferentes foram consumidos e quantas unidades foram compradas. Além de poder identificar o status do pedido e qual cliente fez tal compra.
+
+

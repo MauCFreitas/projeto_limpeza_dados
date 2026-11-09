@@ -53,6 +53,9 @@ ALTER TABLE pedidos_sql
     ALTER COLUMN id_cliente TYPE INT USING id_cliente::INT,
     ALTER COLUMN data_pedido TYPE VARCHAR(20) USING data_pedido::VARCHAR(20),
     ALTER COLUMN status TYPE VARCHAR(50) USING status::VARCHAR(50);
+
+ALTER TABLE pedidos_sql 
+ALTER COLUMN data_pedido TYPE DATE USING data_pedido::DATE;
 --                             fk
 ALTER TABLE pedidos_sql
 ADD CONSTRAINT fk_pedidos_clientes

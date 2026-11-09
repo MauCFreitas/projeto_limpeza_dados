@@ -30,23 +30,23 @@ df_categorias = B.copy()
 
 quantidades = df_categorias['categoria'].value_counts()
 
-# plt.figure(figsize=(10, 5))
-# quantidades.sort_values().plot(kind='barh', color='blue', edgecolor='black')
-# plt.title('Ranking de saída das categorias dos produtos', fontsize=14)
-# plt.xlabel('Quantidade de pedidos', fontsize=12)
-# plt.ylabel('Categorias', fontsize=12)
-# plt.show()
+plt.figure(figsize=(10, 5))
+quantidades.sort_values().plot(kind='barh', color='blue', edgecolor='black')
+plt.title('Ranking de saída das categorias dos produtos', fontsize=14)
+plt.xlabel('Quantidade de pedidos', fontsize=12)
+plt.ylabel('Categorias', fontsize=12)
+plt.show()
 
 
 # Porcentagem de saída
 porcentagens = df_categorias['categoria'].value_counts(normalize=True) * 100
 
-# plt.figure(figsize=(10, 5))
-# porcentagens.sort_values().plot(kind='barh', color='green', edgecolor='red')
-# plt.title('Porcentagem de saída das categorias dos produtos', fontsize=14)
-# plt.xlabel('Porcentagem', fontsize=12)
-# plt.ylabel('Categorias', fontsize=12)
-# plt.show()
+plt.figure(figsize=(10, 5))
+porcentagens.sort_values().plot(kind='barh', color='green', edgecolor='red')
+plt.title('Porcentagem de saída das categorias dos produtos', fontsize=14)
+plt.xlabel('Porcentagem', fontsize=12)
+plt.ylabel('Categorias', fontsize=12)
+plt.show()
 
 # Avaliação de categorias mais vendidas por mês
 pedidos_itens = pedidos.merge(itens, on='id_pedido', how='left')

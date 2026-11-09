@@ -19,7 +19,6 @@ clientes = pd.read_sql("SELECT id_cliente, idade, cidade FROM clientes_sql", eng
 
 
 # Estudo de clientes --- Quem continua comprando? Qual a média de idade dos clientes? Qual cidade mais compra?
-
 # Idades:
 
 dados_clientes = clientes.groupby('id_cliente')['idade'].mean()
@@ -39,26 +38,26 @@ idade_mediana = int(df_idade['idade'].median())
 idade_moda = df_idade['idade'].mode()[0]
 
 
-# plt.figure(figsize=(10, 5))
-# plt.hist(df_idade['idade'], bins=20, color='lightgreen', edgecolor='black')
-# plt.title('Distribuição de Idade dos Clientes', fontsize=14)
-# plt.xlabel('Idade', fontsize=12)
-# plt.ylabel('Frequência', fontsize=12)
-# plt.axvline(idade_media, color='red', linestyle='dashed', linewidth=2, label=f'Média: {idade_media}')
-# plt.axvline(idade_mediana, color='blue', linestyle='dashed', linewidth=2, label=f'Mediana: {idade_mediana}')
-# plt.axvline(idade_moda, color='green', linestyle='dashed', linewidth=2, label=f'Moda: {idade_moda}')
-# plt.legend()
-# plt.show()
+plt.figure(figsize=(10, 5))
+plt.hist(df_idade['idade'], bins=20, color='lightgreen', edgecolor='black')
+plt.title('Distribuição de Idade dos Clientes', fontsize=14)
+plt.xlabel('Idade', fontsize=12)
+plt.ylabel('Frequência', fontsize=12)
+plt.axvline(idade_media, color='red', linestyle='dashed', linewidth=2, label=f'Média: {idade_media}')
+plt.axvline(idade_mediana, color='blue', linestyle='dashed', linewidth=2, label=f'Mediana: {idade_mediana}')
+plt.axvline(idade_moda, color='green', linestyle='dashed', linewidth=2, label=f'Moda: {idade_moda}')
+plt.legend()
+plt.show()
 
 
 # # Cidades:
-# df_cidade = pedidos.merge(clientes[['id_cliente', 'cidade']], on='id_cliente', how='left')
+df_cidade = pedidos.merge(clientes[['id_cliente', 'cidade']], on='id_cliente', how='left')
 
-# top_cidades = df_cidade['cidade'].value_counts().head(5)
+top_cidades = df_cidade['cidade'].value_counts().head(5)
 
-# plt.figure(figsize=(10, 5))
-# top_cidades.sort_values().plot(kind='barh', color='yellow', edgecolor='black')
-# plt.title('Top 5 Cidades com mais Clientes', fontsize=14)
-# plt.xlabel('Quantidade de Clientes', fontsize=12)
-# plt.ylabel('Cidade', fontsize=12)
-# plt.show()
+plt.figure(figsize=(10, 5))
+top_cidades.sort_values().plot(kind='barh', color='yellow', edgecolor='black')
+plt.title('Top 5 Cidades com mais Clientes', fontsize=14)
+plt.xlabel('Quantidade de Clientes', fontsize=12)
+plt.ylabel('Cidade', fontsize=12)
+plt.show()
